@@ -1,11 +1,15 @@
 import express from "express";
 import mongoose from "mongoose";
+import cors from "cors";
 import soccerRoutes from "./routes/soccerRoutes";
 
 const app = express();
-const PORT = 3000;
+const PORT = 5000;
 
+// middlewares
 app.use(express.urlencoded({ extended: false }));
+// CORS setup
+app.use(cors());
 
 // mongo connection
 mongoose.set("strictQuery", false);

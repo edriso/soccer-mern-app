@@ -14,3 +14,13 @@ export const addNewPlayer = (req, res) => {
     res.json(Player);
   });
 };
+
+export const getPlayers = (req, res) => {
+  Player.find({}, (err, players) => {
+    if (err) {
+      res.status(500).send(err);
+    }
+
+    res.json({ results: players.length, players });
+  });
+};
