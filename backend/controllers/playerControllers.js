@@ -8,17 +8,17 @@ export const addNewPlayer = (req, res) => {
 
   newPlayer.save((err, player) => {
     if (err) {
-      res.status(500).send(err);
+      return res.status(500).send(err);
     }
 
-    res.json({ player });
+    res.status(201).json({ player });
   });
 };
 
 export const getPlayers = (req, res) => {
   Player.find({}, (err, players) => {
     if (err) {
-      res.status(500).send(err);
+      return res.status(500).send(err);
     }
 
     res.json({ results: players.length, players });
@@ -29,7 +29,7 @@ export const getPlayer = (req, res) => {
   //   trycatch
   Player.findById(req.params.id, (err, player) => {
     if (err) {
-      res.status(500).send(err);
+      return res.status(500).send(err);
     }
 
     res.json({ player });
@@ -43,12 +43,24 @@ export const updatePlayer = (req, res) => {
     req.body,
     { new: true },
     (err, player) => {
-      console.log(req.body);
       if (err) {
-        res.status(500).send(err);
+        return res.status(500).send(err);
       }
 
       res.json({ player });
     }
   );
+};
+
+export const deletePlayer = (req, res) => {
+  //   trycatch
+  Player.findOneAndDelete({ _id: req.params.id }, (err, player) => {
+    if (err) {
+      return res.status(500).send(err);
+    }
+    if (!player) {
+      return res.status(404).json({ message: "Player not found" });
+    }
+    res.status(204).json({ message: "Successfully deleted player" });
+  });
 };
