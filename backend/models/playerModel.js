@@ -1,19 +1,17 @@
 import mongoose from "mongoose";
 
-const Schema = mongoose.Schema();
-
-export const PlayerSchema = new Schema({
+export const PlayerSchema = new mongoose.Schema({
   firstName: {
     type: String,
-    retuired: true,
+    required: true,
   },
   lastName: {
     type: String,
-    retuired: true,
+    required: true,
   },
   email: {
     type: String,
-    retuired: true,
+    required: true,
   },
   phone: {
     type: Number,
