@@ -2,6 +2,7 @@ import {
   addNewPlayer,
   getPlayers,
   getPlayer,
+  updatePlayer,
 } from "../controllers/playerControllers";
 
 const routes = (app) => {
@@ -15,8 +16,11 @@ const routes = (app) => {
 
   app
     .route("/players/:id")
-    // GET player endpoint
-    .get(getPlayer);
+    // GET a player endpoint
+    .get(getPlayer)
+
+    // update a player endpoint
+    .patch(updatePlayer);
 };
 
 export default routes;

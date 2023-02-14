@@ -35,3 +35,20 @@ export const getPlayer = (req, res) => {
     res.json({ player });
   });
 };
+
+export const updatePlayer = (req, res) => {
+  //   trycatch
+  Player.findOneAndUpdate(
+    req.params.id,
+    req.body,
+    { new: true },
+    (err, player) => {
+      console.log(req.body);
+      if (err) {
+        res.status(500).send(err);
+      }
+
+      res.json({ player });
+    }
+  );
+};
