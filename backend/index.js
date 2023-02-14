@@ -7,8 +7,8 @@ const PORT = 3000;
 app.use(express.json());
 
 // mongo connection
-mongoose.Promise = global.Promise;
 mongoose.set("strictQuery", false);
+mongoose.Promise = global.Promise;
 mongoose.connect("mongodb://localhost/soccerDB", {
   useNewUrlParser: true,
   useUnifiedTopology: true,
