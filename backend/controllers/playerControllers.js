@@ -39,7 +39,7 @@ export const getPlayer = (req, res) => {
 export const updatePlayer = (req, res) => {
   //   trycatch
   Player.findOneAndUpdate(
-    req.params.id,
+    { _id: req.params.id },
     req.body,
     { new: true },
     (err, player) => {
