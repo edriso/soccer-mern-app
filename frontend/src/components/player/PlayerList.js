@@ -1,7 +1,22 @@
-function PlayerList() {
+function PlayerList({ players, updateCurrentPlayer }) {
   return (
     <div>
-      <p>player list</p>
+      <ul className="collection with-header">
+        <li className="collection-header">Players</li>
+
+        {players.map((player) => {
+          return (
+            <a
+              href="#"
+              key={player._id}
+              className="collection-item"
+              onClick={() => updateCurrentPlayer(player)}
+            >
+              {player.firstName} {player.lastName}
+            </a>
+          );
+        })}
+      </ul>
     </div>
   );
 }
