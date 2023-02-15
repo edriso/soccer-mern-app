@@ -1,19 +1,26 @@
 function PlayerList({ players, updateCurrentPlayer }) {
   return (
-    <div>
+    <div className="players-list">
       <ul className="collection with-header">
-        <li className="collection-header">Players</li>
+        <li className="collection-header flow-text">Players</li>
 
         {players.map((player) => {
           return (
-            <a
-              href="#"
-              key={player._id}
+            // <a
+            //   href="#"
+            //   key={player._id}
+            //   className="collection-item"
+            //   onClick={() => updateCurrentPlayer(player)}
+            // >
+            //   {player.firstName} {player.lastName}
+            // </a>
+            <li
               className="collection-item"
+              key={player._id}
               onClick={() => updateCurrentPlayer(player)}
             >
               {player.firstName} {player.lastName}
-            </a>
+            </li>
           );
         })}
       </ul>

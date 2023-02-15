@@ -1,0 +1,7 @@
+.players-list li.collection-item {
+  cursor: pointer;
+  transition: all 250ms ease-in-out;
+}
+.players-list li.collection-item:hover {
+  background-color: #b39ddb;
+}

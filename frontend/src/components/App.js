@@ -29,7 +29,7 @@ function App() {
   return (
     <div className="container-fluid">
       <div className="row">
-        <nav className="col s12 purple darken-2">
+        <nav className="col s12 deep-purple lighten-2">
           <div className="nav-wrapper">
             <a href="/" className="brand-logo">
               Soccer Management
