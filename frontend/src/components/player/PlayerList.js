@@ -6,14 +6,6 @@ function PlayerList({ players, updateCurrentPlayer }) {
 
         {players.map((player) => {
           return (
-            // <a
-            //   href="#"
-            //   key={player._id}
-            //   className="collection-item"
-            //   onClick={() => updateCurrentPlayer(player)}
-            // >
-            //   {player.firstName} {player.lastName}
-            // </a>
             <li
               className="collection-item"
               key={player._id}
