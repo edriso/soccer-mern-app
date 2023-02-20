@@ -10,13 +10,7 @@ My first MERN app
 On both frontend and backend folders, run
 
 ```
-npm install
-```
-
-then
-
-```
-npm start
+npm install && npm start
 ```
 
 #### Screenshot
