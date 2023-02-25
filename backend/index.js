@@ -7,8 +7,9 @@ const app = express();
 const PORT = 5000;
 
 // middlewares
-app.use(express.json()); // html form worked with this
-app.use(express.urlencoded({ extended: false })); // postman worked with this
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
+
 // CORS setup
 app.use(cors());
 
